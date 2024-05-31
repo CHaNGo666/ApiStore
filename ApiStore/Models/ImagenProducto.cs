@@ -22,4 +22,8 @@ public partial class ImagenProducto
     public string Abm { get; set; } = null!;
 
     public bool Borrado { get; set; }
+
+    public virtual Product IdProductoNavigation { get; set; } = null!;
+
+    public virtual Store IdStoreNavigation { get; set; } = null!;
 }

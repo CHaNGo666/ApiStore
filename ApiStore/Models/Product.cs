@@ -15,8 +15,6 @@ public partial class Product
 
     public string? Codigo { get; set; }
 
-    public int Imagen { get; set; }
-
     public string Abm { get; set; } = null!;
 
     public bool Borrado { get; set; }

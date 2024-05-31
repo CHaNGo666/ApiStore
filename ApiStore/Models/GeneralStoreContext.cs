@@ -37,9 +37,9 @@ public partial class GeneralStoreContext : DbContext
 
     public virtual DbSet<SubCategory> SubCategories { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+//    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("server=PCCHANGO2018; database= GeneralStore; Encrypt=False; integrated security=True");
+//        => optionsBuilder.UseSqlServer("server=PCCHANGO2018; database= GeneralStore; Encrypt=False; integrated security=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -49,10 +49,10 @@ public partial class GeneralStoreContext : DbContext
 
             entity.ToTable("Category");
 
-            entity.Property(e => e.Abm).HasColumnName("ABM");
-            entity.Property(e => e.Borrado)
+            entity.Property(e => e.Abm)
                 .HasMaxLength(2)
-                .IsUnicode(false);
+                .IsUnicode(false)
+                .HasColumnName("ABM");
             entity.Property(e => e.CategoryName)
                 .HasMaxLength(50)
                 .IsUnicode(false);
@@ -94,6 +94,16 @@ public partial class GeneralStoreContext : DbContext
             entity.Property(e => e.Nombre)
                 .HasMaxLength(100)
                 .IsUnicode(false);
+
+            entity.HasOne(d => d.IdProductoNavigation).WithMany()
+                .HasForeignKey(d => d.IdProducto)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_ImagenProducto_Product");
+
+            entity.HasOne(d => d.IdStoreNavigation).WithMany()
+                .HasForeignKey(d => d.IdStore)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_ImagenProducto_Store");
         });
 
         modelBuilder.Entity<Product>(entity =>

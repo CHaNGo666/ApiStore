@@ -30,13 +30,14 @@ namespace ApiStore.Logica
         }
         #endregion
 
-        #region Lista de tienda
+        #region Lista Store
         public async Task<IEnumerable<StoreDto>> ListaStore()
         {
             try
             {
                 IEnumerable<Store> x = await _store.ObtenerTodos();
-                return _mapper.Map<IEnumerable<StoreDto>>(x);
+                var maper =_mapper.Map<IEnumerable<StoreDto>>(x);
+                return maper;
 
             }
             catch (Exception e)
@@ -90,8 +91,6 @@ namespace ApiStore.Logica
             Product producto = _mapper.Map<Product>(entidad);
 
             producto = await _producto.MProduct(producto);
-
-
 
             return _mapper.Map<ProductDto>(producto);
         }

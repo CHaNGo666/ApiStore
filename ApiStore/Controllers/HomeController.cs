@@ -113,6 +113,29 @@ namespace ApiStore.Controllers
         }
         #endregion
 
+
+        #region Login Post
+        [HttpPost]
+        [Route("LoginPost")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<string>> LoginPost([FromBody] LogDto entidad)
+        {
+            Task<string> task = Task.Run(() => {
+                string x = "ok";
+                
+                return x;
+            });
+
+            string res = await task;
+
+            return Ok(res);
+        }
+        #endregion
+
+
+
         #region ok 
         //[HttpPost]
         //public async Task<ActionResult> AStore(Store store)

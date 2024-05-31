@@ -68,7 +68,22 @@ namespace ApiStore.Repositorio
 
         public async Task<List<T>> ObtenerTodos(Expression<Func<T, bool>>? filtro = null)
         {
-            IQueryable<T> query = dbSet;
+            //IQueryable<T> query = dbSet;
+
+            IQueryable<T> query;
+
+            Type tipo = typeof(T);
+
+            if (tipo.Name == "Store")
+            {
+                query = dbSet.Include("Products");
+            }
+            else
+            {
+                query = dbSet;
+            }
+
+
 
             if (filtro != null)
             {

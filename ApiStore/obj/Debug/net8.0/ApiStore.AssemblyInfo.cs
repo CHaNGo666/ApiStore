@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiStore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e94fc8d97776bd14610945150ebfae983c33f641")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiStore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiStore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

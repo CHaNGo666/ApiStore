@@ -32,6 +32,6 @@ namespace ApiStore.Dto
 
         public string Usuario { get; set; } = null!;
 
-        public List<ProvinciaDto> ProvinciaDto { get; set; } = null!;
+        public virtual IEnumerable<ProductDto> ProductsList { get; set; } = new List<ProductDto>();
     }
 }

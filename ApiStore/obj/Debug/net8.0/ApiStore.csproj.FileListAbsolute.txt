@@ -136,3 +136,4 @@ C:\Desarrollo\APIs\ApiStore\ApiStore\obj\Debug\net8.0\ApiStore.pdb
 C:\Desarrollo\APIs\ApiStore\ApiStore\obj\Debug\net8.0\ApiStore.genruntimeconfig.cache
 C:\Desarrollo\APIs\ApiStore\ApiStore\obj\Debug\net8.0\ref\ApiStore.dll
 C:\Desarrollo\APIs\ApiStore\ApiStore\bin\Debug\net8.0\AutoMapper.dll
+C:\Desarrollo\APIs\ApiStore\ApiStore\obj\Debug\net8.0\ApiStore.sourcelink.json

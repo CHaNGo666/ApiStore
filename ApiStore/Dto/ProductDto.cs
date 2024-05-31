@@ -14,7 +14,8 @@ namespace ApiStore.Dto
 
         public string? Codigo { get; set; }
 
-        public int Imagen { get; set; }
+        // PRUEBA DE COMPOSICION
+        public string DescCod { get; set; } = null!;
 
         //public string Abm { get; set; } = null!;
 

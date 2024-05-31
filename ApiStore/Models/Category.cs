@@ -11,9 +11,9 @@ public partial class Category
 
     public string CategoryName { get; set; } = null!;
 
-    public bool Abm { get; set; }
+    public string Abm { get; set; } = null!;
 
-    public string Borrado { get; set; } = null!;
+    public bool Borrado { get; set; }
 
     public string Usuario { get; set; } = null!;
 
